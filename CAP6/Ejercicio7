@@ -1,0 +1,31 @@
+programa Ejercictacion6 
+procesos 
+  proceso CalleFlor (E calle: numero; E flores: numero) 
+  variables 
+    floresBolsa: numero
+  comenzar 
+    Pos(1,calle) 
+    floresBolsa:= 0
+    mientras (HayFlorEnLaEsquina)&(floresBolsa<flores)
+      tomarFlor
+      floresBolsa:= floresBolsa + 1
+    mientras (floresBolsa<flores)
+      mover
+      mientras (HayFlorEnLaEsquina) & (floresBolsa<flores)
+        tomarFlor
+        floresBolsa:= floresBolsa + 1
+  fin 
+areas 
+  ciudad: AreaC(1,1,100,100) 
+robots 
+  robot robot1 
+  comenzar 
+    derecha
+    CalleFlor(23,30)
+  fin
+variables 
+  R-info : robot1 
+comenzar 
+  AsignarArea(R-info,ciudad) 
+  Iniciar(R-info, 1 , 1) 
+fin

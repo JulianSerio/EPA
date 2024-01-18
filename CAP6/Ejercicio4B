@@ -1,0 +1,40 @@
+programa Ejercictacion6 
+procesos 
+  proceso rectangulo (E ancho: numero; E alto: numero)
+  comenzar 
+    repetir 2
+      repetir alto
+        mover    
+      derecha 
+      repetir ancho
+        mover
+      derecha
+  fin 
+areas 
+  ciudad: AreaC(1,1,100,100) 
+robots 
+  robot robot1 
+  variables
+    variable1: numero 
+    variable2: numero
+    variablePosAv: numero
+    variablePosCa: numero
+  comenzar 
+    variable1:= 1
+    variable2:= 15
+    variablePosAv:= 1
+    variablePosCa:= 1
+    repetir 4
+      rectangulo(variable1,variable2)
+      variable2:= variable2 - 4
+      variablePosAv:= variablePosAv + 1
+      variablePosCa:= variablePosCa + 2
+      Pos(variablePosAv,variablePosCa)
+      
+  fin
+variables 
+  R-info : robot1 
+comenzar 
+  AsignarArea(R-info,ciudad) 
+  Iniciar(R-info, 1 , 1) 
+fin

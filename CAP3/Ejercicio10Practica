@@ -1,0 +1,24 @@
+programa EpaEjercitacion
+areas
+  ciudad:AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    cantPap: numero
+  comenzar
+    repetir 4
+      cantPap:= 0
+      repetir 99
+        mientras (HayPapelEnLaEsquina) 
+          tomarPapel
+          cantPap:= cantPap + 1
+        mover 
+      derecha
+    Informar (cantPap) 
+  fin
+variables
+  R-info: robot1
+comenzar
+  AsignarArea(R-info,ciudad)
+  Iniciar(R-info,1,1)
+fin

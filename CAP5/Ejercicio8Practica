@@ -1,0 +1,51 @@
+programa modelo
+procesos 
+  proceso RecorrerAv 
+  comenzar
+    mientras (HayFlorEnLaEsquina) 
+      tomarFlor
+    repetir 99
+      mover
+      mientras (HayFlorEnLaEsquina) 
+        tomarFlor
+  fin
+  proceso RecorrerCa
+  comenzar
+    mientras (HayPapelEnLaEsquina) 
+      tomarFlor
+    repetir 99
+      mover
+      mientras (HayPapelEnLaEsquina)
+        tomarPapel 
+  fin
+  proceso izquierda
+  comenzar
+    repetir 3
+      mover
+  fin
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    Ca: numero
+  comenzar
+    Ca:= 0
+    repetir 99
+      RecorrerAv
+      Pos(1,1 + Ca)
+      Ca:= Ca + 1  
+      derecha
+      RecorrerCa
+      Pos(1 + Ca,1) 
+      izquierda
+    RecorrerAv
+    Pos(1,1+Ca)
+    RecorrerCa
+  fin
+variables 
+  R-info: robot1
+comenzar
+  AsignarArea (R-info,ciudad)
+  Iniciar (R-info,1,1)
+fin

@@ -1,0 +1,59 @@
+programa Ejercictacion7
+procesos
+  proceso JuntarYDepositar(ES FloresTotales:numero ; ES PapelesTotales:numero)
+  variables
+    FlorEsq:numero
+    PapelEsq:numero
+  comenzar
+    FlorEsq:=0
+    PapelEsq:=0
+    mientras(HayFlorEnLaEsquina)
+      tomarFlor
+      FlorEsq:= FlorEsq + 1
+    si (HayFlorEnLaBolsa)
+      repetir FlorEsq
+        depositarFlor
+    mientras (HayPapelEnLaEsquina)
+      tomarPapel
+      PapelEsq:= PapelEsq + 1
+    si (HayPapelEnLaBolsa)
+      repetir PapelEsq
+        depositarPapel
+    FloresTotales:= FloresTotales + FlorEsq
+    PapelesTotales:= PapelesTotales + PapelEsq
+  fin 
+  proceso recorrer(E Calle:numero;ES FloresTotales:numero; ES PapelesTotales:numero)
+  comenzar
+    Pos(1,Calle)
+    repetir 99
+      JuntarYDepositar(FloresTotales, PapelesTotales)
+      mover
+    JuntarYDepositar(FloresTotales, PapelesTotales)
+  fin
+  proceso informo(E FloresTotales:numero; E PapelesTotales:numero)
+  comenzar
+    Informar(FloresTotales)
+    Informar(PapelesTotales)
+  fin
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    FloresTotales:numero
+    PapelesTotales:numero
+    Calle:numero
+  comenzar
+    derecha
+    FloresTotales:=0
+    PapelesTotales:=0
+    Calle:=70
+    recorrer(Calle,FloresTotales,PapelesTotales)
+    informo(FloresTotales,PapelesTotales)
+  fin
+variables 
+  R-info : robot1 
+comenzar 
+  AsignarArea(R-info,ciudad) 
+  Iniciar(R-info, 1 , 1) 
+fin

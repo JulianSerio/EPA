@@ -1,0 +1,36 @@
+programa examen 
+procesos
+  proceso ContarFlores (ES c: numero) 
+  comenzar 
+    mientras (HayFlorEnLaEsquina) 
+      c:= c + 1 
+      tomarFlor
+  fin
+  proceso contarPapeles (ES c: numero) 
+  comenzar 
+    mientras (HayPapelEnLaEsquina) 
+      c:= c + 1
+      tomarPapel
+  fin
+  proceso contarPapeles (ES ok: boolean) 
+  variables 
+    cantFlo: numero 
+    cantPap: numero
+  comenzar
+    cantFlo:= 0 
+    cantFlo:= 0 
+    contarFlores(cantFlo) 
+    contarPapeles(cantPap)  
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    recorrerAvenida(9)
+  fin
+variables 
+  r-info: robot1
+comenzar
+  AsignarArea(r-info,ciudad)
+  Iniciar(r-info,1,1)
+fin

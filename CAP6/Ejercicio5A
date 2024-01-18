@@ -1,0 +1,37 @@
+programa Ejercictacion6 
+procesos 
+  proceso avanzar(E move: numero)
+  comenzar 
+    repetir 2
+      repetir move
+        mover
+      derecha
+  fin 
+  proceso ubicar
+  comenzar
+    repetir 2
+      derecha
+  fin
+areas 
+  ciudad: AreaC(1,1,100,100) 
+robots 
+  robot robot1 
+  variables
+    variable1: numero
+  comenzar
+    variable1:= 4
+    avanzar(variable1) 
+    ubicar 
+    variable1:= variable1 - 1
+    avanzar(variable1)
+    ubicar
+    variable1:= variable1 - 1
+    avanzar(variable1)
+    ubicar
+  fin
+variables 
+  R-info : robot1 
+comenzar 
+  AsignarArea(R-info,ciudad) 
+  Iniciar(R-info, 1 , 1) 
+fin

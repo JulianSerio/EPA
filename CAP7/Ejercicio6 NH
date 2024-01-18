@@ -1,0 +1,43 @@
+programa examen 
+procesos
+
+  proceso floresT (ES flores: numero) 
+  variables
+    aux: numero
+  comenzar 
+    aux:= 0
+    mientras (HayFlorEnLaEsquina) 
+      tomarFlor
+      aux:= aux + 1
+      flores:= flores + 1 
+    repetir aux
+      depositarFlor
+  fin
+  proceso papelesT (ES papeles: numero) 
+  variables
+    aux: numero
+  comenzar
+    aux:= 0
+    mientras (HayPapelEnLaEsquina) 
+      tomarPapel
+      aux:= aux + 1
+      papeles:= papeles + 1
+    repetir aux 
+      depositarPapel
+  fin
+  proceso cuadrado (E lado: numero) 
+  variables 
+    
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    recorrerAvenida(9)
+  fin
+variables 
+  r-info: robot1
+comenzar
+  AsignarArea(r-info,ciudad)
+  Iniciar(r-info,1,1)
+fin

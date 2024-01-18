@@ -1,0 +1,47 @@
+programa Ejercictacion7
+procesos
+  proceso recorrerAv 
+  variables
+    vacio: boolean
+  comenzar
+    vacio:= V
+    repetir 99 
+      verifico(vacio)
+      si (vacio= F)
+        mientras (vacio= F) & (PosCa < 100)
+          contabilizo
+          mover 
+          verifico(vacio) 
+      Pos(PosAv + 1, 1) 
+  fin
+  proceso verifico (ES vacio: boolean)
+  comenzar 
+    si (HayPapelEnLaEsquina) & (HayPapelEnLaEsquina)
+      vacio:= F
+    sino
+      vacio:= V
+  fin
+  proceso contabilizo 
+  variables
+    c: numero
+  comenzar
+    c:= 0
+    mientras (HayFlorEnLaEsquina) 
+      tomarFlor
+      c:= c + 1
+    si (c >= 45)
+      Informar(PosAv,PosCa) 
+  fin
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  comenzar
+    recorrerAv
+  fin
+variables 
+  R-info : robot1 
+comenzar 
+  AsignarArea(R-info,ciudad) 
+  Iniciar(R-info, 1 , 1) 
+fin

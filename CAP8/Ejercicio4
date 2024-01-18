@@ -1,0 +1,71 @@
+programa Ejercictacion7
+procesos 
+  proceso floresYpapeles (ES floresT: numero; ES papelesT: numero)
+  comenzar  
+    mientras (HayFlorEnLaEsquina) 
+      tomarFlor
+      floresT:= floresT + 1
+    mientras (HayPapelEnLaEsquina)
+      tomarPapel
+      papelesT:= papelesT + 1
+  fin
+  proceso recorrerAv (ES floresT: numero; ES papelesT: numero, ES esquina: boolean)
+  variables 
+    esquina: boolean 
+  comenzar
+    esquina:= V
+    repetir 99
+      doscinco (esquina) 
+      si (esquina = F)
+        mientras (esquina= F)
+          floresYpapeles(floresT,papelesT)
+          mover
+  fin
+   proceso doscinco (ES esquina: boolean)
+  comenzar 
+    si (flores = 25)
+      vacio:= F
+      Pos(1,75)
+      repetir papelesT
+        mover
+    sino
+      vacio:= V
+  fin
+areas
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables
+    floresT: numero 
+    papelesT: numero
+  comenzar
+    floresT:= 0
+    papelesT:= 0
+    recorrerAv(floresT,papelesT,esquina) 
+  fin
+variables 
+  R-info : robot1 
+comenzar 
+  AsignarArea(R-info,ciudad) 
+  Iniciar(R-info, 1 , 1) 
+fin
+
+
+
+
+ proceso recorrerAv 
+  variables
+    doscinco: boolean
+  comenzar
+    doscinco:= V
+    repetir 99 
+      doscinco(esquina)
+      si (vacio= F)
+        mientras (vacio= F) 
+          contabilizo
+          mover 
+          verifico(vacio) 
+      Pos(PosAv + 1, 1) 
+  fin
+
+

@@ -1,0 +1,46 @@
+programa examen 
+procesos
+  proceso LimpiarEsq (ES floresMover: numero)
+  variables
+    aux: numero  
+  comenzar
+    aux:= 0
+    mientras (HayFlorEnLaEsquina) 
+      tomarFlor
+      aux:= aux + 1
+      floresMover:= floresMover + 1
+    Pos(PosAv,PosCa + 1) 
+    repetir aux
+      depositarFlor
+    Pos(PosAv,PosCa - 1) 
+  fin
+  proceso recorrerCalle (E nro: numero ; ES floresMover: numero) 
+  comenzar
+    Pos(1,nro) 
+    repetir 99 
+      LimpiarEsq(floresMover)
+      mover
+    LimpiarEsq(floresMover) 
+  fin
+areas 
+  ciudad: AreaC(1,1,100,100)
+robots
+  robot robot1
+  variables 
+    floresMover: numero
+    nroCa: numero
+  comenzar
+    derecha
+    floresMover:= 0
+    nroCa:= 1
+    repetir 50
+      recorrerCalle(nroCa,floresMover)
+      nroCa:= nroCa + 2
+    Informar(floresMover)
+  fin
+variables 
+  r-info: robot1
+comenzar
+  AsignarArea(r-info,ciudad)
+  Iniciar(r-info,1,1)
+fin
